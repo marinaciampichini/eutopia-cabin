@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EUTÒPIA — ECO CABIN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- ============================================================
+     INTRO — sostituisci i versi con la poesia definitiva.
+     Ogni .verse è uno schermo. Aggiungi/rimuovi <div class="panel">
+     per cambiare il numero di schermate: lo script si adatta da solo.
+     ============================================================ -->
+<div id="intro">
+  <div class="frame"></div>
+  <button class="skip-intro" id="skipIntro">Salta l'introduzione</button>
+
+  <div class="panel">
+    <p class="verse" >Cerco un rifugio <br> per lasciare che il vento <br> entri dalla finestra <br> e raggiunga il mio spirito</p>
+  </div>
+
+  <!--<div class="panel">
+    <p class="verse"></p>
+  </div>
+  <div class="panel">
+    <p class="verse"></p>
+  </div>
+  <div class="panel">
+    <p class="verse"></p>
+
+  </div>
+-->
+
+  <div class="intro-progress" id="introProgress"></div>
+  <div class="intro-hint">Scorri o clicca per continuare</div>
+</div>
+
+<!-- ============================================================
+     SITE
+     ============================================================ -->
+<div id="site">
+
+  <section class="hero">
+    <img class="ph" src="immagini/aerial view_landscape.jpg" alt="Vista aerea della tiny house immersa nel bosco">
+    <div class="hero-content">
+      <span class="eyebrow">Otricoli, Umbria</span>
+      <h1>EUTÒPIA</h1>
+      <p>[ Payoff breve — una riga che racconta la filosofia della eco cabin ]</p>
+    </div>
+    <div class="scroll-cue">Scorri</div>
+  </section>
+
+  <section class="section philosophy reveal">
+    <div class="section-head">
+      <span class="eyebrow">Filosofia</span>
+      <h2>[ Titolo sezione filosofia / visione ]</h2>
+      <p>[ Testo — perché EUTÒPIA nasce come casa mobile ecodesign: materiali, rapporto con il paesaggio, tempo lento. Da sostituire con il copy definitivo. ]</p>
+    </div>
+    <div class="rule"></div>
+  </section>
+
+  <section class="pinned-gallery">
+    <div class="pin-row">
+      <div class="pin-media"><img class="ph" src="immagini/inside_tinyhouse_landscape.jpg" alt="Angolo living con stufa a legna"></div>
+      <div class="pin-text reveal">
+        <span class="eyebrow">01 — Interni</span>
+        <h3>[ Nome ambiente ]</h3>
+        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
+      </div>
+    </div>
+    <div class="pin-row">
+      <div class="pin-media"><img class="ph" src="immagini/bed and big window_vertical.jpg" alt="Letto con vista sul bosco dalla grande vetrata"></div>
+      <div class="pin-text reveal">
+        <span class="eyebrow">02 — Interni</span>
+        <h3>[ Nome ambiente ]</h3>
+        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
+      </div>
+    </div>
+    <div class="pin-row">
+      <div class="pin-media"><img class="ph" src="immagini/kitchen_vertical.jpg" alt="Dettaglio della cucina"></div>
+      <div class="pin-text reveal">
+        <span class="eyebrow">03 — Interni</span>
+        <h3>[ Nome ambiente ]</h3>
+        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt reveal">
+    <div class="section-head">
+      <span class="eyebrow">Materiali</span>
+      <h2>[ Titolo sezione materiali / sostenibilità ]</h2>
+      <p>[ Testo introduttivo su approccio eco-design. ]</p>
+    </div>
+    <div class="materials-list">
+      <div class="material-item">
+        <span class="num">01</span>
+        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">02</span>
+        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">03</span>
+        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">04</span>
+        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="place reveal">
+    <img class="ph" src="immagini/tiny house from garden pov_landscape.jpg" alt="Paesaggio circostante la tiny house">
+    <div class="place-text">
+      <span class="eyebrow">Il luogo</span>
+      <h2>[ Titolo — Otricoli, Umbria ]</h2>
+      <p>[ Testo sul contesto: paesaggio, silenzio, perché questo luogo. ]</p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="eyebrow">Galleria</span>
+      <h2>[ Titolo sezione galleria ]</h2>
+    </div>
+    <div class="mosaic">
+      <img class="ph" src="immagini/breakfast_landscape.jpg" alt="Colazione servita nella tiny house">
+      <img class="ph" src="immagini/door tiny house vertical.jpg" alt="Ingresso della tiny house">
+      <img class="ph" src="immagini/inside_tinyhouse_2_landscape.jpg" alt="Interno con accappatoi sul letto">
+    </div>
+  </section>
+
+  <section class="cta reveal" id="ctaSection">
+    <span class="eyebrow">Prenota una visita</span>
+    <h2>[ Call to action principale ]</h2>
+    <p>[ Testo di invito al contatto / prenotazione soggiorno. ]</p>
+    <a href="#" class="cta-btn">[ Scrivi a EUTÒPIA ]</a>
+  </section>
+
+  <footer>
+    <span>EUTÒPIA — Otricoli, Umbria</span>
+    <span>[ email · instagram · tiktok ]</span>
+    <span>© <span id="year"></span> EUTÒPIA</span>
+  </footer>
+
+</div>
+
+<!-- ============================================================
+     PULSANTE FISSO "PRENOTA"
+     Sempre visibile (dopo l'intro) su ogni sezione.
+     Comportamento controllato da AIRBNB_URL più sotto nello script:
+     - se vuota  -> porta alla sezione CTA del sito
+     - se compilata -> apre l'annuncio Airbnb in una nuova scheda
+     ============================================================ -->
+<a href="#ctaSection" id="floatingBook" class="floating-book">
+  <span id="floatingBookLabel">Prenota</span>
+</a>
+
+<script>
+/* ============================================================
+   1) INTRO A PANNELLI (shoji)
+   ============================================================ */
+(function(){
+  const intro = document.getElementById('intro');
+  const panels = Array.from(document.querySelectorAll('.panel'));
+  const progressWrap = document.getElementById('introProgress');
+  const skipBtn = document.getElementById('skipIntro');
+  let current = 0;
+  let closing = false;
+
+  panels.forEach(() => {
+    const dot = document.createElement('span');
+    progressWrap.appendChild(dot);
+  });
+  const dots = Array.from(progressWrap.children);
+
+  function render(){
+    panels.forEach((p,i)=>{
+      p.classList.toggle('is-active', i === current);
+      p.classList.toggle('is-leaving', i < current);
+      p.style.zIndex = panels.length - i;
+    });
+    dots.forEach((d,i)=> d.classList.toggle('done', i <= current));
+  }
+  render();
+
+  function advance(){
+    if(closing) return;
+    if(current < panels.length - 1){
+      current++;
+      render();
+    } else {
+      closeIntro();
+    }
+  }
+
+  let pageWheelLock = true;
+
+  function closeIntro(){
+    if(closing) return;
+    closing = true;
+    pageWheelLock = true;
+    intro.classList.add('is-closing','is-open');
+    setTimeout(()=>{
+      intro.style.display='none';
+      document.body.style.overflow = 'auto'; // riattiva lo scroll SOLO a chiusura completata
+      window.scrollTo(0, 0);
+      setTimeout(()=> pageWheelLock = false, 80);
+    }, 1050);
+  }
+
+  // interazioni: click, tasto freccia/spazio, scroll/swipe
+  intro.addEventListener('click', (e)=>{
+    if(e.target === skipBtn) return;
+    advance();
+  });
+  window.addEventListener('wheel', (e)=>{
+    if(pageWheelLock){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, {passive:false});
+  window.addEventListener('keydown', (e)=>{
+    if(closing || intro.style.display === 'none') return;
+    if(['ArrowRight','ArrowDown',' ','Enter'].includes(e.key)){
+      e.preventDefault(); // evita che la pagina sottostante scrolli con la stessa pressione
+      advance();
+    }
+  });
+  let wheelLock = false;
+  let wheelTimer = null;
+
+  function resetWheelLock(){
+    wheelLock = false;
+    wheelTimer = null;
+  }
+
+  intro.addEventListener('wheel', (e)=>{
+    e.preventDefault(); // blocca sempre lo scroll nativo: lo gestiamo noi manualmente
+    if(wheelLock) return;
+    if(e.deltaY > 8){
+      wheelLock = true;
+      advance();
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(resetWheelLock, 250);
+    }
+  }, {passive:false});
+  skipBtn.addEventListener('click', closeIntro);
+
+  // blocca lo scroll della pagina finché l'intro è aperta
+  document.body.style.overflow = 'hidden';
+})();
+
+/* ============================================================
+   2) REVEAL ON SCROLL
+   ============================================================ */
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, {threshold:0.15});
+  els.forEach(el=> io.observe(el));
+})();
+
+/* ============================================================
+   3) PULSANTE FISSO "PRENOTA"
+   Da modificare solo questa riga quando avremo il link dell'annuncio:
+   se resta vuota, il pulsante scrolla alla sezione CTA del sito;
+   appena la compili, diventa un link diretto ad Airbnb.
+   ============================================================ */
+const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
+
+(function(){
+  const btn = document.getElementById('floatingBook');
+  const label = document.getElementById('floatingBookLabel');
+  const ctaSection = document.getElementById('ctaSection');
+  const introEl = document.getElementById('intro');
+
+  function applyMode(){
+    if(AIRBNB_URL.trim()){
+      btn.href = AIRBNB_URL.trim();
+      btn.target = '_blank';
+      btn.rel = 'noopener';
+      label.textContent = 'Prenota su Airbnb';
+    } else {
+      btn.href = '#ctaSection';
+      btn.removeAttribute('target');
+      btn.removeAttribute('rel');
+      label.textContent = 'Prenota';
+    }
+  }
+  applyMode();
+
+  btn.addEventListener('click', (e)=>{
+    if(!AIRBNB_URL.trim()){
+      e.preventDefault();
+      ctaSection.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  // appare solo dopo la chiusura dell'intro
+  function checkIntroClosed(){
+    if(introEl.style.display === 'none'){
+      btn.classList.add('is-visible');
+    } else {
+      requestAnimationFrame(checkIntroClosed);
+    }
+  }
+  checkIntroClosed();
+
+  // si nasconde quando la sezione CTA è già a schermo (inutile ripetersi)
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      btn.classList.toggle('is-hidden-on-cta', entry.isIntersecting);
+    });
+  }, {threshold:0.6});
+  io.observe(ctaSection);
+})();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
