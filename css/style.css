@@ -1,7 +1,3 @@
-/* ============================================================
-   EUTOPIA — token di design
-   Modifica qui colori/font: si propagano a tutto il sito.
-   ============================================================ */
 :root{
   --linen:#EDE7DC;      /* fondo caldo principale */
   --mist:#F5F2EC;       /* fondo chiaro alternativo */
@@ -163,7 +159,15 @@ a{color:inherit;}
   background:linear-gradient(0deg, rgba(43,42,37,0.55), transparent);
   z-index:-1;
 }
-.hero h1{font-size:clamp(38px, 7vw, 88px); line-height:1.02;}
+.hero-logo{
+  display:block;
+  width:min(420px, 72vw);
+  height:auto;
+  margin-top:14px;
+  padding:14px 20px;
+  background:rgba(245,242,236,0.88);
+  box-shadow:0 8px 24px rgba(43,42,37,0.28);
+}
 .hero p{margin-top:18px; max-width:440px; font-size:16px; line-height:1.6; opacity:.9;}
 .scroll-cue{
   position:absolute; top:28px; right:var(--edge); z-index:2;
@@ -264,23 +268,25 @@ footer{
 .floating-book{
   position:fixed; bottom:32px; right:var(--edge); z-index:50;
   display:flex; align-items:center; gap:8px;
-  padding:15px 26px;
-  background:var(--ink); color:var(--mist);
-  font-family:var(--body); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  min-width:190px; min-height:68px; justify-content:center;
+  padding:20px 34px;
+  background:var(--mist); color:var(--ink);
+  font-family:var(--body); font-size:14px; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
   text-decoration:none;
-  border:1px solid rgba(245,242,236,0.4);
+  border:2px solid var(--mist);
+  box-shadow:0 8px 24px rgba(43,42,37,0.35);
   opacity:0; transform:translateY(10px); pointer-events:none;
-  transition:opacity .5s ease, transform .5s ease, background .3s ease, color .3s ease;
+  transition:opacity .5s ease, transform .5s ease, background .3s ease, color .3s ease, box-shadow .3s ease;
 }
 .floating-book.is-visible{opacity:1; transform:translateY(0); pointer-events:auto;}
 .floating-book.is-hidden-on-cta{opacity:0; transform:translateY(10px); pointer-events:none;}
-.floating-book:hover{background:var(--mist); color:var(--ink); border-color:var(--ink);}
+.floating-book:hover{background:var(--ink); color:var(--mist); border-color:var(--ink); box-shadow:0 10px 28px rgba(43,42,37,0.45);}
 
 @media (max-width:760px){
-  .floating-book{bottom:20px; right:20px; padding:13px 20px; font-size:11px;}
+  .floating-book{bottom:20px; right:20px; min-width:170px; min-height:60px; padding:17px 26px; font-size:12px;}
   .hero{align-items:center;}
   .hero-content{padding:0 20px 40px;}
-  .hero h1{font-size:clamp(32px, 10vw, 52px);}
+  .hero-logo{width:min(340px, 86vw); padding:11px 16px;}
   .hero p{margin-top:14px; max-width:100%; font-size:15px; line-height:1.7;}
   .scroll-cue{top:18px; right:18px;}
   .place-text{padding:50px 20px;}
