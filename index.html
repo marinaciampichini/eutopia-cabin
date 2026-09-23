@@ -402,7 +402,9 @@ const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
   btn.addEventListener('click', (e)=>{
     if(!AIRBNB_URL.trim()){
       e.preventDefault();
-      ctaSection.scrollIntoView({behavior:'smooth', block:'start'});
+      const offset = 92;
+      const top = ctaSection.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   });
 

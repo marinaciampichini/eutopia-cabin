@@ -19,6 +19,8 @@
 html{
   scroll-behavior:smooth;
   scroll-snap-type: y mandatory; /* ogni gesto di scroll "aggancia" la sezione successiva */
+  scroll-padding-top: 96px;
+  scroll-padding-bottom: 120px;
 }
 body{
   background:var(--linen);
@@ -342,6 +344,7 @@ p{
   background:var(--ink); color:var(--mist);
   text-align:center; padding:200px var(--edge);
   scroll-snap-align:start; scroll-snap-stop:always;
+  scroll-margin-top: 96px;
 }
 .cta .eyebrow{color:var(--stone);}
 .cta h2{font-size:clamp(32px,5.5vw,64px); margin-top:14px; line-height:1.1;}
