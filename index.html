@@ -13,6 +13,33 @@
 <body>
 
 <!-- ============================================================
+     NAVBAR — fissa in alto su ogni sezione.
+    Solida anche sopra la hero, così il logo mantiene il suo colore originale.
+    Dopo lo scroll si compatta.
+     I link sono anchor alle sezioni della stessa pagina, non pagine separate.
+     ============================================================ -->
+<header class="site-nav" id="siteNav">
+  <a href="#" class="nav-logo-link" aria-label="EUTÒPIA — torna in cima">
+    <img src="immagini/eutopia_wordmark.png" alt="EUTÒPIA" class="nav-logo">
+  </a>
+
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#filosofia">Filosofia</a>
+    <a href="#interni">Interni</a>
+    <a href="#materiali">Materiali</a>
+    <a href="#luogo">Il luogo</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#ctaSection" class="nav-cta">Prenota</a>
+  </nav>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============================================================
      INTRO — sostituisci i versi con la poesia definitiva.
      Ogni .verse è uno schermo. Aggiungi/rimuovi <div class="panel">
      per cambiare il numero di schermate: lo script si adatta da solo.
@@ -22,6 +49,13 @@
   <button class="skip-intro" id="skipIntro">Salta l'introduzione</button>
 
   <div class="panel">
+    <video class="panel-video"
+  autoplay muted loop playsinline
+  disablePictureInPicture disableRemotePlayback
+  poster="immagini/poster-verso1.jpg"
+  tabindex="-1" aria-hidden="true">
+  <source src="immagini/loopsitoeutopia.mp4" type="video/mp4">
+</video>
     <p class="verse" >Cerco un rifugio <br> per lasciare che il vento <br> entri dalla finestra <br> e raggiunga il mio spirito</p>
   </div>
 
@@ -49,14 +83,13 @@
   <section class="hero">
     <img class="ph" src="immagini/aerial view_landscape.jpg" alt="Vista aerea della tiny house immersa nel bosco">
     <div class="hero-content">
-      <span class="eyebrow">Otricoli, Umbria</span>
-      <img class="hero-logo" src="./immagini/eutopia_wordmark.png" alt="EUTÒPIA">
-      <p>Un rifugio nomade immerso nella natura. Un ritorno a ciò che è semplice, vero, selvaggio.</p>
+      <p class="hero-intro">Un rifugio nomade immerso nella natura. <br> Un ritorno a ciò che è semplice.</p>
+      <span class="hero-location">CURRENTLY AT: ZONA ARCHEOLOGICA DI OTRICOLI, TERNI, UMBRIA, ITALY</span>
     </div>
     <div class="scroll-cue">Scorri</div>
   </section>
 
-  <section class="section philosophy reveal">
+  <section class="section philosophy reveal" id="filosofia">
     <div class="section-head">
       <span class="eyebrow">Filosofia</span>
       <h2>Lo senti il cuore, com'è calmo qui?</h2>
@@ -65,7 +98,7 @@
     <div class="rule"></div>
   </section>
 
-  <section class="pinned-gallery">
+  <section class="pinned-gallery" id="interni">
     <div class="pin-row">
       <div class="pin-media"><img class="ph" src="immagini/inside_tinyhouse_landscape.jpg" alt="Angolo living con stufa a legna"></div>
       <div class="pin-text reveal">
@@ -92,7 +125,7 @@
     </div>
   </section>
 
-  <section class="section alt reveal">
+  <section class="section alt reveal" id="materiali">
     <div class="section-head">
       <span class="eyebrow">Materiali</span>
       <h2>[ Titolo sezione materiali / sostenibilità ]</h2>
@@ -118,7 +151,7 @@
     </div>
   </section>
 
-  <section class="place reveal">
+  <section class="place reveal" id="luogo">
     <img class="ph" src="immagini/tiny house from garden pov_landscape.jpg" alt="Paesaggio circostante la tiny house">
     <div class="place-text">
       <span class="eyebrow">Il luogo</span>
@@ -127,28 +160,51 @@
     </div>
   </section>
 
-  <section class="section reveal">
+  <section class="section reveal" id="galleria">
     <div class="section-head">
       <span class="eyebrow">Galleria</span>
       <h2>[ Titolo sezione galleria ]</h2>
     </div>
     <div class="mosaic">
-      <img class="ph" src="immagini/breakfast_landscape.jpg" alt="Colazione servita nella tiny house">
-      <img class="ph" src="immagini/door tiny house vertical.jpg" alt="Ingresso della tiny house">
-      <img class="ph" src="immagini/inside_tinyhouse_2_landscape.jpg" alt="Interno con accappatoi sul letto">
+      <figure class="mosaic-item mosaic-item--large">
+        <img src="immagini/breakfast_landscape.jpg" alt="Colazione servita nella tiny house">
+      </figure>
+      <figure class="mosaic-item">
+        <img src="immagini/door tiny house vertical.jpg" alt="Ingresso della tiny house">
+      </figure>
+      <figure class="mosaic-item">
+        <img src="immagini/kitchen landscape.jpg" alt="Dettaglio della cucina nella tiny house">
+      </figure>
+      <figure class="mosaic-item mosaic-item--wide">
+        <img src="immagini/inside_tinyhouse_2_landscape.jpg" alt="Interno con accappatoi sul letto">
+      </figure>
+      <figure class="mosaic-item">
+        <img src="immagini/bed and window further.jpg" alt="Camera da letto con vista sul bosco">
+      </figure>
+      <figure class="mosaic-item">
+        <img src="immagini/bagno1.jpg" alt="Dettaglio del bagno della tiny house">
+      </figure>
+      <figure class="mosaic-item">
+        <img src="immagini/bagno2.jpg" alt="Bagno della tiny house in uno sguardo d'insieme">
+      </figure>
     </div>
   </section>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi immagine">×</button>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
   <section class="cta reveal" id="ctaSection">
     <span class="eyebrow">Prenota una visita</span>
-    <h2>[ Call to action principale ]</h2>
-    <p>[ Testo di invito al contatto / prenotazione soggiorno. ]</p>
-    <a href="#" class="cta-btn">[ Scrivi a EUTÒPIA ]</a>
+    <h2>Prenota il tuo soggiorno</h2>
+    <p>Prenota il tuo soggiorno immerso nella natura Umbra e scopri quali eventi artistici sono in programma.</p>
+    <a href="#" class="cta-btn">Prenota ora</a>
   </section>
 
   <footer>
-    <span>EUTÒPIA — Otricoli, Umbria</span>
-    <span>[ email · instagram · tiktok ]</span>
+    <span>EUTÒPIA — 42.41578872891707, 12.466128729829284 </span>
+    <span>[ info@eutopia-cabin.com· instagram @eutopia_cabin ]</span>
     <span>© <span id="year"></span> EUTÒPIA</span>
   </footer>
 
@@ -176,6 +232,10 @@
   const skipBtn = document.getElementById('skipIntro');
   let current = 0;
   let closing = false;
+
+  if (panels.length <= 1) {
+    skipBtn.style.display = 'none';
+  }
 
   panels.forEach(() => {
     const dot = document.createElement('span');
@@ -284,6 +344,7 @@ const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
 (function(){
   const btn = document.getElementById('floatingBook');
   const label = document.getElementById('floatingBookLabel');
+  const navCta = document.querySelector('.nav-cta');
   const ctaSection = document.getElementById('ctaSection');
   const introEl = document.getElementById('intro');
 
@@ -293,11 +354,21 @@ const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
       btn.target = '_blank';
       btn.rel = 'noopener';
       label.textContent = 'Prenota su Airbnb';
+
+      navCta.href = AIRBNB_URL.trim();
+      navCta.target = '_blank';
+      navCta.rel = 'noopener';
+      navCta.textContent = 'Prenota su Airbnb';
     } else {
       btn.href = '#ctaSection';
       btn.removeAttribute('target');
       btn.removeAttribute('rel');
       label.textContent = 'Prenota';
+
+      navCta.href = '#ctaSection';
+      navCta.removeAttribute('target');
+      navCta.removeAttribute('rel');
+      navCta.textContent = 'Prenota';
     }
   }
   applyMode();
@@ -328,7 +399,79 @@ const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
   io.observe(ctaSection);
 })();
 
+/* ============================================================
+   4) NAVBAR
+   ============================================================ */
+(function(){
+  const nav = document.getElementById('siteNav');
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  const backdrop = document.getElementById('navBackdrop');
+
+  // compatta la navbar dopo il primo tratto di scroll
+  function onScroll(){
+    nav.classList.toggle('is-solid', window.scrollY > 40);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // menu mobile (drawer)
+  function closeMenu(){
+    links.classList.remove('is-open');
+    backdrop.classList.remove('is-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = 'auto';
+  }
+  function openMenu(){
+    links.classList.add('is-open');
+    backdrop.classList.add('is-visible');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  toggle.addEventListener('click', ()=>{
+    links.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
+
 document.getElementById('year').textContent = new Date().getFullYear();
+
+(function(){
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeBtn = document.getElementById('lightboxClose');
+  const galleryImages = document.querySelectorAll('.mosaic-item img');
+
+  function openLightbox(src, alt){
+    lightboxImage.src = src;
+    lightboxImage.alt = alt;
+    lightbox.classList.add('is-visible');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('is-visible');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-visible')) {
+      closeLightbox();
+    }
+  });
+})();
 </script>
 </body>
 </html>
