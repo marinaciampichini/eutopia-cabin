@@ -45,6 +45,9 @@
      per cambiare il numero di schermate: lo script si adatta da solo.
      ============================================================ -->
 <div id="intro">
+  <div class="intro-loader" id="introLoader" aria-live="polite" aria-label="Caricamento introduzione">
+    <div class="intro-loader-spinner"></div>
+  </div>
   <div class="frame"></div>
   <button class="skip-intro" id="skipIntro">Salta l'introduzione</button>
 
@@ -93,60 +96,63 @@
     <div class="section-head">
       <span class="eyebrow">Filosofia</span>
       <h2>Lo senti il cuore, com'è calmo qui?</h2>
-      <p>[ Testo — perché EUTÒPIA nasce come casa mobile ecodesign: materiali, rapporto con il paesaggio, tempo lento. Da sostituire con il copy definitivo. ]</p>
+      <p>EUTÓPIA è uno spazio che si muove con chi lo vive. Una casa nomade diventata rifugio, dove la natura, l’arte e la lentezza diventano parte integrante della quotidianità. Eutòpia è il posto perfetto per 'stare': ascoltare la luce, ritrovare il proprio ritmo, lasciare che il paesaggio influenzi il tuo benessere.
+
+Ogni soggiorno è diverso perché nasce da te.
+Intimo, materico, presente. Un luogo vivo che invita a trasformarsi, anche solo per qualche giorno.</p>
     </div>
     <div class="rule"></div>
+  </section>
+
+   <section class="section alt reveal" id="materiali">
+    <div class="section-head">
+      <span class="eyebrow">Lo Spazio</span>
+      <h2>Eutòpia: una traccia leggera nello spazio che circonda.</h2>
+      <p>Eutòpia rappresenta un approccio innovativo alla vivibilità, dove ogni dettaglio è pensato per armonizzarsi con l'ambiente circostante.</p>
+    </div>
+    <div class="materials-list">
+      <div class="material-item">
+        <span class="num">01</span>
+        <div><h4>La vetrata.</h4><p>La grande vetrata vuole diminuire il divario tra l'interno e l'esterno, permettendo all'occupante di sentirsi parte del paesaggio.</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">02</span>
+        <div><h4>Il legno.</h4><p>Il legno è utilizzato in modo sostenibile, con una finitura che mette in risalto la naturalezza del materiale.</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">03</span>
+        <div><h4>Autonomia energetica.</h4><p>Eutòpia cabin è dotata di sistemi di energia rinnovabile che consentono di essere autonomi dal punto di vista energetico.</p></div>
+      </div>
+      <div class="material-item">
+        <span class="num">04</span>
+        <div><h4>La filosofia progettuale.</h4><p>La filosofia progettuale di Eutòpia si basa sulla fusione tra design moderno e pratica sostenibile, creando uno spazio che rispetta l'ambiente circostante.</p></div>
+      </div>
+    </div>
   </section>
 
   <section class="pinned-gallery" id="interni">
     <div class="pin-row">
       <div class="pin-media"><img class="ph" src="immagini/inside_tinyhouse_landscape.jpg" alt="Angolo living con stufa a legna"></div>
       <div class="pin-text reveal">
-        <span class="eyebrow">01 — Interni</span>
-        <h3>[ Nome ambiente ]</h3>
-        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
+        <span class="eyebrow">scopri</span>
+        <h3>L'esperienza</h3>
+        <p>Un'esperienza unica di vivere in armonia con la natura, dove ogni dettaglio è pensato per creare un ambiente confortevole e sostenibile.</p>
       </div>
     </div>
     <div class="pin-row">
       <div class="pin-media"><img class="ph" src="immagini/bed and big window_vertical.jpg" alt="Letto con vista sul bosco dalla grande vetrata"></div>
       <div class="pin-text reveal">
-        <span class="eyebrow">02 — Interni</span>
-        <h3>[ Nome ambiente ]</h3>
-        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
+        <span class="eyebrow">slow travel</span>
+        <h3>Soggiornare in Eutòpia</h3>
+        <p>Soggiornare in Eutòpia significa lasciarsi trasportare da un'esperienza che unisce comfort e sostenibilità.</p>
       </div>
     </div>
     <div class="pin-row">
       <div class="pin-media"><img class="ph" src="immagini/kitchen_vertical.jpg" alt="Dettaglio della cucina"></div>
       <div class="pin-text reveal">
-        <span class="eyebrow">03 — Interni</span>
-        <h3>[ Nome ambiente ]</h3>
-        <p>[ Descrizione breve dell'ambiente e delle scelte di design. ]</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt reveal" id="materiali">
-    <div class="section-head">
-      <span class="eyebrow">Materiali</span>
-      <h2>[ Titolo sezione materiali / sostenibilità ]</h2>
-      <p>[ Testo introduttivo su approccio eco-design. ]</p>
-    </div>
-    <div class="materials-list">
-      <div class="material-item">
-        <span class="num">01</span>
-        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
-      </div>
-      <div class="material-item">
-        <span class="num">02</span>
-        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
-      </div>
-      <div class="material-item">
-        <span class="num">03</span>
-        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
-      </div>
-      <div class="material-item">
-        <span class="num">04</span>
-        <div><h4>[ Materiale ]</h4><p>[ Nota su provenienza / caratteristiche. ]</p></div>
+        <span class="eyebrow">arte</span>
+        <h3>Un modo diverso di vivere Eutòpia</h3>
+        <p>Residenze artistiche, mostre, concerti, laboratori di creatività, piccoli eventi. Eutòpia da il benvenuto ad artisti e creativi per lasciarsi ispirare dalla natura che li circonda.</p>
       </div>
     </div>
   </section>
@@ -155,15 +161,15 @@
     <img class="ph" src="immagini/tiny house from garden pov_landscape.jpg" alt="Paesaggio circostante la tiny house">
     <div class="place-text">
       <span class="eyebrow">Il luogo</span>
-      <h2>[ Titolo — Otricoli, Umbria ]</h2>
-      <p>[ Testo sul contesto: paesaggio, silenzio, perché questo luogo. ]</p>
+      <h2>La natura nomade di Eutòpia</h2>
+      <p>Essendo una casa su ruote, Eutòpia non è vincolata a un'unico luogo. Al momento si trova presso L'Area Archeologica di Otricoli, TR, Umbria, Italia.</p>
     </div>
   </section>
 
   <section class="section reveal" id="galleria">
     <div class="section-head">
       <span class="eyebrow">Galleria</span>
-      <h2>[ Titolo sezione galleria ]</h2>
+      <h2>Immagini di Eutòpia</h2>
     </div>
     <div class="mosaic">
       <figure class="mosaic-item mosaic-item--large">
@@ -230,11 +236,31 @@
   const panels = Array.from(document.querySelectorAll('.panel'));
   const progressWrap = document.getElementById('introProgress');
   const skipBtn = document.getElementById('skipIntro');
+  const introLoader = document.getElementById('introLoader');
   let current = 0;
   let closing = false;
 
   if (panels.length <= 1) {
     skipBtn.style.display = 'none';
+  }
+
+  const video = document.querySelector('.panel-video');
+  const ready = () => {
+    if (video) {
+      if (video.readyState >= 2 || video.networkState === 3) {
+        introLoader.classList.add('is-hidden');
+        return;
+      }
+    }
+    introLoader.classList.add('is-hidden');
+  };
+
+  if (video) {
+    video.addEventListener('loadeddata', ready, { once: true });
+    video.addEventListener('canplay', ready, { once: true });
+    setTimeout(ready, 600);
+  } else {
+    setTimeout(ready, 300);
   }
 
   panels.forEach(() => {

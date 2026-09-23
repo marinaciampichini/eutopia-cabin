@@ -57,6 +57,13 @@ img,.ph{display:block;width:100%;height:100%;object-fit:cover;}
 h1,h2,h3,.display{font-family:var(--display); font-weight:500; letter-spacing:.01em;}
 
 a{color:inherit;}
+p{
+  font-family:var(--body);
+  font-size:15px;
+  line-height:1.75;
+  font-weight:400;
+  color:rgba(43,42,37,0.82);
+}
 .eyebrow{
   font-family:var(--body);
   font-size:12px;
@@ -104,6 +111,23 @@ a{color:inherit;}
   pointer-events:none;
   z-index:2;
 }
+
+.intro-loader{
+  position:absolute; inset:0; z-index:10;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--linen);
+  transition:opacity .4s ease, visibility .4s ease;
+}
+.intro-loader.is-hidden{
+  opacity:0; visibility:hidden; pointer-events:none;
+}
+.intro-loader-spinner{
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid rgba(43,42,37,0.22);
+  border-top-color:var(--ink);
+  animation:spin .9s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
 
 .intro-progress{
   position:absolute; bottom:40px; left:0; right:0;
@@ -195,6 +219,7 @@ a{color:inherit;}
   max-width:500px;
   font-family:var(--display);
   font-size:clamp(24px, 2.8vw, 42px);
+  color:var(--mist);
   line-height:1.25;
   letter-spacing:.01em;
   font-weight:400;
@@ -220,9 +245,13 @@ a{color:inherit;}
 .section-head h2{font-size:clamp(28px,4vw,46px); margin-top:10px; line-height:1.15;}
 .section-head p{margin-top:20px; font-size:16px; line-height:1.75; color:var(--ink-soft); max-width:52ch;}
 
-/* Filosofia: testo centrale con divisore sottile, molto "ma" */
+/* Filosofia: testo centrale con divisore sottile*/
 .philosophy{text-align:center;}
 .philosophy .section-head{margin:0 auto 0; max-width:720px;}
+.philosophy .section-head p{
+  margin-left:auto; margin-right:auto;
+  text-align:center;
+}
 .philosophy .rule{width:1px; height:64px; background:var(--stone); margin:48px auto;}
 
 /* Interni: galleria "pinnata" a scorrimento continuo */
@@ -262,7 +291,7 @@ a{color:inherit;}
 .place-text{padding:80px 56px; display:flex; flex-direction:column; justify-content:center; background:var(--mist);}
 
 /* Galleria finale a mosaico continuo — trittico: una foto grande + due
-   affiancate. Se in futuro aggiungi altre foto, duplica lo schema
+   affiancate. Per aggiungere altre foto, duplicare lo schema
    aggiungendo altre righe con lo stesso .mosaic-row. */
 .mosaic{
   display:grid; grid-template-columns: 1.6fr 1fr 1fr; grid-auto-rows:220px; gap:2px;
