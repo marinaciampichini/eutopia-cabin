@@ -297,7 +297,9 @@ Intimo, materico, presente. Un luogo vivo che invita a trasformarsi, anche solo 
     if(closing) return;
     closing = true;
     pageWheelLock = true;
-    intro.classList.add('is-closing','is-open');
+    intro.classList.add('is-closing');
+    void intro.offsetWidth;
+    intro.classList.add('is-open');
     setTimeout(()=>{
       intro.style.display='none';
       document.body.style.overflow = 'auto'; // riattiva lo scroll SOLO a chiusura completata
