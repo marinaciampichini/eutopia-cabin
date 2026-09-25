@@ -19,7 +19,7 @@
      I link sono anchor alle sezioni della stessa pagina, non pagine separate.
      ============================================================ -->
 <header class="site-nav" id="siteNav">
-  <a href="#" class="nav-logo-link" aria-label="EUTÒPIA — torna in cima">
+  <a href="#hero" class="nav-logo-link" aria-label="EUTÒPIA — torna in cima">
     <img src="immagini/eutopia_wordmark.png" alt="EUTÒPIA" class="nav-logo">
   </a>
 
@@ -83,7 +83,7 @@
      ============================================================ -->
 <div id="site">
 
-  <section class="hero">
+  <section id="hero" class="hero">
     <img class="ph" src="immagini/aerial view_landscape.jpg" alt="Vista aerea della tiny house immersa nel bosco">
     <div class="hero-content">
       <p class="hero-intro">Un rifugio nomade immerso nella natura. <br> Un ritorno a ciò che è semplice.</p>
@@ -201,18 +201,20 @@ Intimo, materico, presente. Un luogo vivo che invita a trasformarsi, anche solo 
     <img id="lightboxImage" src="" alt="">
   </div>
 
-  <section class="cta reveal" id="ctaSection">
-    <span class="eyebrow">Prenota una visita</span>
-    <h2>Prenota il tuo soggiorno</h2>
-    <p>Prenota il tuo soggiorno immerso nella natura Umbra e scopri quali eventi artistici sono in programma.</p>
-    <a href="#" class="cta-btn">Prenota ora</a>
-  </section>
+  <div class="final-section">
+    <section class="cta reveal" id="ctaSection">
+      <span class="eyebrow">Prenota una visita</span>
+      <h2>Prenota il tuo soggiorno</h2>
+      <p>Prenota il tuo soggiorno immerso nella natura Umbra e scopri quali eventi artistici sono in programma.</p>
+      <a href="#" class="cta-btn">Prenota ora</a>
+    </section>
 
-  <footer>
-    <span>EUTÒPIA — 42.41578872891707, 12.466128729829284 </span>
-    <span>[ info@eutopia-cabin.com· instagram @eutopia_cabin ]</span>
-    <span>© <span id="year"></span> EUTÒPIA</span><span> P.I. 01724030554</span>
-  </footer>
+    <footer>
+      <span>EUTÒPIA — 42.41578872891707, 12.466128729829284 </span>
+      <span>[ info@eutopia-cabin.com· instagram @eutopia_cabin ]</span>
+      <span>© <span id="year"></span> EUTÒPIA</span><span> P.I. 01724030554</span>
+    </footer>
+  </div>
 
 </div>
 
@@ -305,10 +307,27 @@ Intimo, materico, presente. Un luogo vivo che invita a trasformarsi, anche solo 
   }
 
   // interazioni: click, tasto freccia/spazio, scroll/swipe
+  let touchStartY = null;
+  let swipeHandled = false;
+
   intro.addEventListener('click', (e)=>{
     if(e.target === skipBtn) return;
+    if(swipeHandled) return;
     advance();
   });
+  intro.addEventListener('touchstart', (e)=>{
+    if(e.touches.length === 1) touchStartY = e.touches[0].clientY;
+  }, {passive:true});
+  intro.addEventListener('touchend', (e)=>{
+    if(touchStartY === null || e.changedTouches.length !== 1) return;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+    touchStartY = null;
+    if(deltaY < 40) return;
+    swipeHandled = true;
+    advance();
+    setTimeout(()=> swipeHandled = false, 400);
+  }, {passive:true});
   window.addEventListener('wheel', (e)=>{
     if(pageWheelLock){
       e.preventDefault();
@@ -402,7 +421,7 @@ const AIRBNB_URL = ""; // es. "https://www.airbnb.it/rooms/xxxxxxx"
   btn.addEventListener('click', (e)=>{
     if(!AIRBNB_URL.trim()){
       e.preventDefault();
-      const offset = 92;
+      const offset = document.getElementById('siteNav').offsetHeight;
       const top = ctaSection.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
